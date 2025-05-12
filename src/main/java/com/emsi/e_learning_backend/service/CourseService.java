@@ -55,7 +55,6 @@ public class CourseService {
         course.setCategory(courseDto.getCategory());
         course.setLevel(courseDto.getLevel());
         course.setDuration(courseDto.getDuration());
-        course.setProvider(courseDto.getProvider());
 
         // Handle sections
         if (courseDto.getSections() != null) {
@@ -189,11 +188,18 @@ public class CourseService {
         courseDto.setImageUrl(course.getImageUrl());
         courseDto.setEnrolledCount(course.getEnrolledCount());
 
+        if (course.getProfessor() != null) {
+            UserDto professorDto = new UserDto();
+            professorDto.setId(course.getProfessor().getId());
+            professorDto.setFullName(course.getProfessor().getFullName());
+            professorDto.setEmail(course.getProfessor().getEmail());
+            courseDto.setProfessor(professorDto);
+        }
+
         // Nouveaux champs
         courseDto.setCategory(course.getCategory());
         courseDto.setLevel(course.getLevel());
         courseDto.setDuration(course.getDuration());
-        courseDto.setProvider(course.getProvider());
 
         // Convertir les sections
         if (course.getSections() != null) {

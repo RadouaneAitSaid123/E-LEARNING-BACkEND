@@ -25,7 +25,6 @@ public class Course {
     private String category;
     private String level;
     private String duration;
-    private String provider;
 
     @ManyToOne
     @JoinColumn(name = "professor_id")

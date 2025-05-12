@@ -19,8 +19,8 @@ public class CourseDto {
     private String category;
     private String level;
     private String duration;
-    private String provider;
     private List<SectionDto> sections = new ArrayList<>();
     private QuizDto quiz;
+    private UserDto professor;
     private int enrolledCount;
 }
